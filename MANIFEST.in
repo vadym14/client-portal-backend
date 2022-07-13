@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include tarefinancial *.css
+recursive-include tarefinancial *.csv
+recursive-include tarefinancial *.html
+recursive-include tarefinancial *.ico
+recursive-include tarefinancial *.js
+recursive-include tarefinancial *.json
+recursive-include tarefinancial *.md
+recursive-include tarefinancial *.png
+recursive-include tarefinancial *.py
+recursive-include tarefinancial *.svg
+recursive-include tarefinancial *.txt
+recursive-exclude tarefinancial *.pyc
