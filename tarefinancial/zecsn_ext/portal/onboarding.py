@@ -11,3 +11,9 @@ def account_info(name, date_of_birth, ssn):
         return {'status': True, 'message': name}
     else:
         return {'status': False, 'message': _("Incorrect account information")}
+
+
+@frappe.whitelist(allow_guest=True)
+def get_customer_ssn(name):
+    customer = frappe.get_doc('Customer', {"name": name})
+    return customer.get_password('ssn')
