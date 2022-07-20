@@ -2,7 +2,7 @@ import frappe
 from frappe import _
 
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist()
 def account_info(name, date_of_birth, ssn):
     customer = frappe.get_doc('Customer', {"name": name})
     if not customer:
@@ -13,7 +13,7 @@ def account_info(name, date_of_birth, ssn):
         return {'status': False, 'message': _("Incorrect account information")}
 
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist()
 def get_customer_ssn(name):
     customer = frappe.get_doc('Customer', {"name": name})
     return customer.get_password('ssn')
